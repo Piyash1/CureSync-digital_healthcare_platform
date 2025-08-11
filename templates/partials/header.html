@@ -1,0 +1,44 @@
+{% load static %}
+<header class="sticky-nav">
+    <nav>
+        <a href="{% url 'home' %}" class="logo" role="button" aria-label="Go to Home Page">
+            <img src="{% static 'images/logo.png' %}" alt="CureSync" class="logo-image-only">
+        </a>
+
+        <ul>
+            <li><a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">Home</a></li>
+            <li><a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
+            <li><a href="{% url 'services' %}" class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">Services</a></li>
+
+            {% if user.is_authenticated %}
+                <li class="user-menu">
+                    <a href="#" class="user-dropdown">
+                        <i class="fas fa-user-circle"></i>
+                        {{ user.username }}
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'booking' %}">
+                            <i class="fas fa-calendar-alt"></i>
+                            My Appointments
+                        </a>
+                        <a href="{% url 'account_logout' %}">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+            {% else %}
+                <li><a href="{% url 'account_login' %}" class="{% if request.resolver_match.url_name == 'account_login' %}active{% endif %}">Login</a></li>
+                <li><a href="{% url 'account_signup' %}" class="nav-btn signup-btn {% if request.resolver_match.url_name == 'account_signup' %}active{% endif %}">Sign Up</a></li>
+            {% endif %}
+        </ul>
+
+        <!-- Mobile menu toggle -->
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>

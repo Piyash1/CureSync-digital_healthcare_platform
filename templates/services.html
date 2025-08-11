@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CureSync - Services</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    {% include 'partials/header.html' %}
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="filter">
+            <label for="specialization">Filter by Specialization:</label>
+            <select id="specialization" onchange="filterDoctors()">
+                <option value="all">All</option>
+                <option value="general">General Practitioners</option>
+                <option value="pediatrics">Pediatricians</option>
+                <option value="cardiology">Cardiologists</option>
+                <option value="dermatology">Dermatologists</option>
+                <option value="psychiatry">Psychiatrists</option>
+                <option value="telemedicine">Telemedicine</option>
+            </select>
+        </div>
+        <div class="service-grid">
+            <div class="service-card" data-specialization="general">
+                <i class="fas fa-user-md"></i>
+                <h3>General Practitioners</h3>
+                <p>Comprehensive care for all ages and conditions.</p>
+            </div>
+            <div class="service-card" data-specialization="pediatrics">
+                <i class="fas fa-baby"></i>
+                <h3>Pediatricians</h3>
+                <p>Specialized care for infants and children.</p>
+            </div>
+            <div class="service-card" data-specialization="cardiology">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Cardiologists</h3>
+                <p>Expert heart and cardiovascular treatment.</p>
+            </div>
+            <div class="service-card" data-specialization="dermatology">
+                <i class="fas fa-hand-holding-medical"></i>
+                <h3>Dermatologists</h3>
+                <p>Advanced skin health and cosmetic solutions.</p>
+            </div>
+            <div class="service-card" data-specialization="psychiatry">
+                <i class="fas fa-brain"></i>
+                <h3>Psychiatrists</h3>
+                <p>Mental health support and therapy.</p>
+            </div>
+            <div class="service-card" data-specialization="telemedicine">
+                <i class="fas fa-video"></i>
+                <h3>Telemedicine</h3>
+                <p>Virtual consultations with top specialists.</p>
+            </div>
+        </div>
+        <h2>Facilities</h2>
+        <div class="facility-grid">
+            <div class="facility-card">
+                <i class="fas fa-hospital"></i>
+                <h3>Hospital Chambers</h3>
+                <p>Detailed info on partnered facilities.</p>
+            </div>
+            <div class="facility-card">
+                <i class="fas fa-clock"></i>
+                <h3>Appointment Scheduling</h3>
+                <p>Flexible and convenient time slots.</p>
+            </div>
+            <div class="facility-card">
+                <i class="fas fa-prescription-bottle"></i>
+                <h3>Prescription Management</h3>
+                <p>Digital prescription and refill services.</p>
+            </div>
+            <div class="facility-card">
+                <i class="fas fa-credit-card"></i>
+                <h3>Billing & Payments</h3>
+                <p>Secure and transparent payment options.</p>
+            </div>
+            <div class="facility-card">
+                <i class="fas fa-lock"></i>
+                <h3>Secure Records</h3>
+                <p>Encrypted and private health data.</p>
+            </div>
+        </div>
+    </section>
+    {% include 'partials/footer.html' %}
+    <script src="{% static 'js/services.js' %}"></script>
+</body>
+</html>

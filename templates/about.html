@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CureSync - About Us</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    {% include 'partials/header.html' %}
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>CureSync is a pioneering digital health platform dedicated to enhancing the healthcare experience. Founded with a vision to bridge the gap between patients and quality care, we leverage cutting-edge technology to offer personalized, efficient, and secure medical services.</p>
+        
+        <div class="team-section">
+            <div class="team-card">
+                <img src="{% static 'images/doctor1.jpg' %}" alt="Dr. John Smith">
+                <h3>Dr. John Smith</h3>
+                <p>Chief Medical Officer, MBBS, MD</p>
+            </div>
+            <div class="team-card">
+                <img src="{% static 'images/doctor2.jpg' %}" alt="Dr. Jane Doe">
+                <h3>Dr. Jane Doe</h3>
+                <p>Head of Technology, MBBS, PhD</p>
+            </div>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html' %}
+
+    <script src="{% static 'js/about.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CureSync - Your Digital Healthcare Partner</title>
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    {% include 'partials/header.html' %}
+
+    <section class="hero">
+        <h1>CureSync – Your Digital Healthcare Partner</h1>
+        <p>Transforming healthcare with innovative digital solutions.</p>
+        <div class="cta-buttons">
+            <a href="{% url 'booking' %}" class="btn primary">Book Appointment</a>
+            <a href="{% url 'services' %}" class="btn secondary">Explore Services</a>
+    </section>
+    <section class="mission">
+        <h2>Our Mission</h2>
+        <p>At CureSync, we are committed to revolutionizing healthcare by providing seamless access to top-tier medical services, secure health records, and real-time support, tailored to your needs.</p>
+    </section>
+    <section class="features">
+        <h2>Core Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-stethoscope"></i>
+                <h3>Smart Doctor Booking</h3>
+                <p>Effortless scheduling with specialists worldwide.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-file-medical"></i>
+                <h3>Online Health Records</h3>
+                <p>Secure, accessible medical history at your fingertips.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bell"></i>
+                <h3>Instant Notifications</h3>
+                <p>Stay informed with timely appointment reminders.</p>
+            </div>
+        </div>
+    </section>
+    {% include 'partials/footer.html' %}
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/nav.js' %}"></script>
+</body>
+</html>

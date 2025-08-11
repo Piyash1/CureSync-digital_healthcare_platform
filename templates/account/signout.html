@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Signed Out - CureSync</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    .signout-container {
+      background: white;
+      padding: 40px 60px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+    h1 {
+      margin-bottom: 20px;
+      color: #007bff;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    a.btn-home {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    a.btn-home:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="signout-container">
+    <h1>Logged Out Successfully</h1>
+    <p>You have been signed out. Thanks for visiting CureSync.</p>
+    <a href="{% url 'home' %}" class="btn-home" aria-label="Go to Home Page">Go to Home</a>
+  </div>
+</body>
+</html>

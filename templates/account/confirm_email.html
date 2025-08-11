@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CureSync - Confirm Your Email</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        /* Center the section vertically and horizontally */
+        .confirm-email-section {
+            min-height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background: #f9f9f9;
+        }
+
+        /* Card styling */
+        .auth-card {
+            background: white;
+            padding: 2.5rem 3rem;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .auth-card h2 {
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        .auth-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 1.2rem;
+        }
+
+        .auth-card a {
+            color: #007bff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .auth-card a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    {% include 'partials/header.html' %}
+
+    <section class="auth confirm-email-section">
+        <div class="auth-card">
+            <h2>Confirm Your Email</h2>
+            <p>We've sent a confirmation email to <strong>{{ email }}</strong>. Please check your inbox and click the link to verify your email address.</p>
+            <p>If you haven't received the email after a few minutes, please check your spam folder or <a href="{% url 'account_resend_email' %}">click here to resend</a>.</p>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html' %}
+</body>
+</html>

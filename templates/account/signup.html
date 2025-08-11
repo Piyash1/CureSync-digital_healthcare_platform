@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CureSync - Sign Up</title>
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    {% include 'partials/header.html' %}
+
+    <section class="auth">
+        <div class="auth-card">
+            <h2>Create an Account</h2>
+
+            <form method="POST" action="{% url 'account_signup' %}">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+
+                <!-- Full Name first -->
+                {% if form.name %}
+                <div class="form-group">
+                    <label for="{{ form.name.id_for_label }}">Full Name</label>
+                    {{ form.name }}
+                    {{ form.name.errors }}
+                </div>
+                {% endif %}
+
+                <!-- Then Email -->
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+
+                <!-- Then Passwords -->
+                <div class="form-group">
+                    <label for="{{ form.password1.id_for_label }}">Password</label>
+                    {{ form.password1 }}
+                    {{ form.password1.errors }}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+                    {{ form.password2 }}
+                    {{ form.password2.errors }}
+                </div>
+
+                <!-- Other optional fields below -->
+                {% if form.age %}
+                <div class="form-group">
+                    <label for="{{ form.age.id_for_label }}">Age</label>
+                    {{ form.age }}
+                    {{ form.age.errors }}
+                </div>
+                {% endif %}
+                {% if form.gender %}
+                <div class="form-group">
+                    <label for="{{ form.gender.id_for_label }}">Gender</label>
+                    {{ form.gender }}
+                    {{ form.gender.errors }}
+                </div>
+                {% endif %}
+                {% if form.mobile %}
+                <div class="form-group">
+                    <label for="{{ form.mobile.id_for_label }}">Mobile Number</label>
+                    {{ form.mobile }}
+                    {{ form.mobile.errors }}
+                </div>
+                {% endif %}
+
+                <button type="submit" class="btn primary">Sign Up</button>
+            </form>
+
+
+            <p>Already have an account? <a href="{% url 'account_login' %}">Login here</a></p>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html' %}
+</body>
+</html>
